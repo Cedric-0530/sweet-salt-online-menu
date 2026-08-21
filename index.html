@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet & Salt | Burgers, Fish & Chips, Milkshakes & More</title>
+    <meta name="description" content="Sweet & Salt menu offering delicious burgers, fresh Wild Hake & Farmed Barramundi fish and chips, hand-crafted milkshakes, $4 coffees & hot drinks, and daily fresh baked sandwiches.">
+    <!-- High-DPI Sharp Site Favicons (Optimized Picture Logo) -->
+    <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
+    <link rel="icon" type="image/png" href="icon/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="stylesheet" href="style.css?v=7">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a class="skip-link" href="#menuContent">Skip to menu</a>
+    <div class="background-decor"></div>
+    
+    <!-- Top Utility Bar -->
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <div class="real-photo-badge">
+                <span>100% Real Food Photography - All images taken on site</span>
+            </div>
+            <div class="top-bar-controls">
+                <button id="adminStatsBtn" class="admin-badge-btn" type="button" title="View Page Analytics" aria-haspopup="dialog">
+                    <span>Page Views</span>: <strong id="headerViewCount">...</strong>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="main-header">
+            <!-- Picture Logo placed inside the webpage header -->
+            <div class="brand-logo-container">
+                <div class="brand-logo-image-wrapper">
+                    <img src="icon/图片logo.png" alt="Sweet & Salt Picture Logo" class="brand-logo-img">
+                </div>
+                <h1 class="sr-only">Sweet & Salt</h1>
+                <p class="subtitle">Delicious Burgers, Fish & Chips, Milkshakes & Fresh Sandwiches</p>
+            </div>
+
+            <!-- Global Search Bar -->
+            <div class="search-filter-wrapper">
+                <div class="search-box">
+                    <label class="sr-only" for="menuSearch">Search the menu</label>
+                    <input type="search" id="menuSearch" placeholder="Search menu items or ingredients..." autocomplete="off" aria-describedby="searchFeedback">
+                    <button id="clearSearch" class="clear-search-btn" type="button" aria-label="Clear menu search" hidden>&times;</button>
+                </div>
+                <p id="searchFeedback" class="search-feedback" role="status" aria-live="polite"></p>
+            </div>
+        </header>
+
+        <!-- Category Navigation Bar -->
+        <nav class="category-nav" id="categoryNav" aria-label="Menu categories">
+            <button class="nav-btn active" type="button" data-target="all" aria-current="true" aria-label="All Items"><span class="nav-label-full">All Items</span><span class="nav-label-short">All</span></button>
+            <button class="nav-btn chef-nav-btn" type="button" data-target="chef" aria-label="Chef's Choice"><span class="nav-label-full">Chef's Choice</span><span class="nav-label-short">Chef's</span></button>
+            <button class="nav-btn" type="button" data-target="burgers" aria-label="Burgers and Rolls"><span class="nav-label-full">Burgers &amp; Rolls</span><span class="nav-label-short">Burgers</span></button>
+            <button class="nav-btn" type="button" data-target="seafood" aria-label="Fish and Chicken"><span class="nav-label-full">Fish &amp; Chicken</span><span class="nav-label-short">Fish &amp; Chicken</span></button>
+            <button class="nav-btn" type="button" data-target="milkshakes" aria-label="Milkshakes and Drinks"><span class="nav-label-full">Milkshakes &amp; Drinks</span><span class="nav-label-short">Drinks</span></button>
+            <button class="nav-btn" type="button" data-target="coffee" aria-label="Coffee and Hot Drinks"><span class="nav-label-full">Coffee &amp; Hot Drinks</span><span class="nav-label-short">Coffee</span></button>
+            <button class="nav-btn" type="button" data-target="salads" aria-label="Salads and Sandwiches"><span class="nav-label-full">Salads &amp; Sandwiches</span><span class="nav-label-short">Salads</span></button>
+            <button class="nav-btn" type="button" data-target="battered" aria-label="Snacks and Sides"><span class="nav-label-full">Snacks &amp; Sides</span><span class="nav-label-short">Sides</span></button>
+            <button class="nav-btn" type="button" data-target="deals" aria-label="Deals and Extras"><span class="nav-label-full">Deals &amp; Extras</span><span class="nav-label-short">Deals</span></button>
+        </nav>
+
+        <main class="menu-content" id="menuContent">
+            <p id="noResults" class="no-results" role="status" hidden>No menu items match that search. Try another ingredient or dish name.</p>
+            <!-- Burgers & Rolls -->
+            <section id="burgers" class="menu-section active">
+                <h2 class="section-title">Burgers & Rolls</h2>
+                
+                <div class="menu-grid">
+                    <!-- Chef Choice 1: Big Bowral Burger -->
+                    <div class="menu-item chef-choice">
+                        <div class="chef-badge">Chef's Choice</div>
+                        <div class="item-img-container">
+                            <img src="image/bowral burger.jpg" alt="Big Bowral Beef Burger" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Big Bowral Beef Burger</h3>
+                                <span class="price">$15</span>
+                            </div>
+                            <p class="description">Juicy beef patty, crispy bacon, fried egg, cheese, lettuce, tomato, beetroot, grilled onion, and signature BBQ sauce.</p>
+                        </div>
+                    </div>
+
+                    <!-- Chef Choice 2: Portuguese Chicken Burger -->
+                    <div class="menu-item chef-choice">
+                        <div class="chef-badge">Chef's Choice</div>
+                        <div class="item-img-container">
+                            <img src="image/portguese burger.jpg" alt="Portuguese Chicken Burger" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Grilled Portuguese Chicken Burger <span class="spicy-badge" style="font-size: 0.8em; color: #e63946; margin-left: 8px;">(Contains Chilli)</span></h3>
+                                <span class="price">$15</span>
+                            </div>
+                            <p class="description">Tender grilled marinated chicken breast, melted cheese, crisp lettuce, spicy chili sauce, and creamy mayo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Steak Sandwich -->
+                    <div class="menu-item">
+                        <div class="item-img-container">
+                            <img src="image/steak sandwish.jpg" alt="Steak Sandwich" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Steak Sandwich</h3>
+                                <span class="price">$16</span>
+                            </div>
+                            <p class="description">Tender grilled steak, fresh lettuce, tomato, beetroot, grilled onion, and savory BBQ sauce served on fresh baked bread.</p>
+                        </div>
+                    </div>
+
+                    <!-- Schnitzel Burger -->
+                    <div class="menu-item">
+                        <div class="item-img-container">
+                            <img src="image/scthniteel burger.jpg" alt="Chicken Schnitzel Burger" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Chicken Schnitzel Burger</h3>
+                                <span class="price">$15</span>
+                            </div>
+                            <p class="description">Golden crumbed chicken schnitzel fillet, crisp lettuce, and mayonnaise.</p>
+                        </div>
+                    </div>
+
+                    <!-- Schnitzel Roll -->
+                    <div class="menu-item">
+                        <div class="item-img-container">
+                            <img src="image/schnitzel roll.JPG" alt="Chicken Schnitzel Roll" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Chicken Schnitzel Roll</h3>
+                                <span class="price">$15</span>
+                            </div>
+                            <p class="description">Golden crumbed chicken schnitzel fillet, crisp lettuce, and mayonnaise on a fresh long roll.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fried Chicken Burger -->
+                    <div class="menu-item">
+                        <div class="item-img-container">
+                            <img src="image/Fried chic burger.JPG" alt="Fried Chicken Burger" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Fried Chicken Burger</h3>
+                                <span class="price">$15</span>
+                            </div>
+                            <p class="description">Crispy fried chicken, lettuce, and mayo.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Small Bacon & Egg Roll</h3>
+                                <span class="price">$9</span>
+                            </div>
+                            <p class="description">2 rashers of crispy bacon, 1 fried egg, and BBQ sauce served on a soft hamburger bun.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Large Bacon & Egg Roll</h3>
+                                <span class="price">$11</span>
+                            </div>
+                            <p class="description">3 rashers of crispy bacon, 2 fried eggs, and BBQ sauce served on a long bread roll.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-img-container">
+                            <img src="image/original burger.jpg" alt="Original Beef Burger" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Original Beef Burger</h3>
+                                <span class="price">$13</span>
+                            </div>
+                            <p class="description">100% pure beef patty, fresh lettuce, tomato, beetroot, grilled onion, melted cheese, and BBQ sauce.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-img-container">
+                            <img src="image/burger with lot.JPG" alt="The Lot Beef Burger" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>The Lot Beef Burger</h3>
+                                <span class="price">$16</span>
+                            </div>
+                            <p class="description">Beef patty, bacon, fried egg, cheese, juicy pineapple ring, lettuce, tomato, beetroot, grilled onion, and BBQ sauce.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Mexican Beef Burger <span class="spicy-badge" style="font-size: 0.8em; color: #e63946; margin-left: 8px;">(Contains Chilli)</span></h3>
+                                <span class="price">$15</span>
+                            </div>
+                            <p class="description">Beef patty, fresh tomato, crisp lettuce, fresh avocado slices, sweet chili sauce, and sour cream.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Crispy Fish Burger</h3>
+                                <span class="price">$13</span>
+                            </div>
+                            <p class="description">Crispy fried fish fillet, cheese, fresh lettuce, tomato, and tangy tartar sauce.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Avocado Grilled Chicken Burger</h3>
+                                <span class="price">$16</span>
+                            </div>
+                            <p class="description">Tender grilled chicken breast, cheese, fresh sliced avocado, lettuce, and mayonnaise.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Hawaiian Chicken Burger</h3>
+                                <span class="price">$16</span>
+                            </div>
+                            <p class="description">Crispy chicken fillet, grilled pineapple ring, cheese, fresh lettuce, and mayo.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-img-container">
+                            <img src="image/chicken gravy roll.jpg" alt="Hot Gravy Roast Chicken Roll" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Hot Gravy Roast Chicken Roll</h3>
+                                <span class="price">$10</span>
+                            </div>
+                            <p class="description">Fresh shredded roast BBQ chicken smothered in hot gravy served inside a soft roll.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-img-container">
+                            <img src="image/kids burger.JPG" alt="Kid's Burger" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Kid's Burger</h3>
+                                <span class="price">$10</span>
+                            </div>
+                            <p class="description">Beef patty, cheese slice, crisp lettuce, and tomato sauce.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fish & Chicken -->
+            <section id="seafood" class="menu-section">
+                <h2 class="section-title">Fish & Chicken</h2>
+
+                <div class="fish-guarantee-box">
+                    <div class="fish-box-info">
+                        <h4>Wild Hake & Farmed Barramundi Guarantee</h4>
+                        <p>All our fish dishes feature prime Wild-Caught Hake & Farmed Barramundi fillets, prepared fresh to order (Battered, Crumbed, or Grilled).</p>
+                        <p style="margin-top: 0.4rem; font-weight: 600; color: #2b6cb0;">* Note: All seafood items are served with fresh lemon by default.</p>
+                    </div>
+                </div>
+
+                <!-- Raw Fish Showcase -->
+                <div class="raw-fish-showcase">
+                    <h3 class="subsection-title">In-Store Fresh Catch Daily Fillets:</h3>
+                    <div class="raw-fish-grid">
+                        <div class="raw-fish-card">
+                            <img src="image/raw hake.jpg" alt="Wild Hake Raw Fillet" class="raw-fish-img" loading="lazy" decoding="async">
+                            <div class="raw-fish-label">
+                                <h4>Wild Hake Fillet</h4>
+                                <p>Deep-sea wild caught Hake, sweet & tender texture</p>
+                            </div>
+                        </div>
+                        <div class="raw-fish-card">
+                            <img src="image/raw barramudi.jpg" alt="Farmed Barramundi Raw Fillet" class="raw-fish-img" loading="lazy" decoding="async">
+                            <div class="raw-fish-label">
+                                <h4>Farmed Barramundi Fillet</h4>
+                                <p>Sustainably farmed Barramundi, firm & juicy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection mt-4">
+                    <h3 class="subsection-title">Fish & Chips Specials</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="item-img-container">
+                                <img src="image/fish and chips.jpg" alt="Farmed Barramundi and chips meal" class="item-real-img" loading="lazy" decoding="async">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Farmed Barramundi & Chips Meal</h3>
+                                    <span class="price">$20</span>
+                                </div>
+                                <p class="description">Sustainably farmed Barramundi fillet served with hot chips and fresh lemon wedge.</p>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-img-container">
+                                <img src="image/fish and chips.jpg" alt="Wild Hake and chips meal" class="item-real-img" loading="lazy" decoding="async">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Wild Hake & Chips Meal</h3>
+                                    <span class="price">$16</span>
+                                </div>
+                                <p class="description">Wild deep-sea caught Hake fillet served with hot chips and fresh lemon wedge.</p>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-image-placeholder">
+                                <span class="coming-soon-text">Image coming soon</span>
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Wild Hake Fillet Only</h3>
+                                    <span class="price">$12</span>
+                                </div>
+                                <p class="description">Single Wild Hake fillet (Battered, Crumbed, or Grilled).</p>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-image-placeholder">
+                                <span class="coming-soon-text">Image coming soon</span>
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Farmed Barramundi Fillet Only</h3>
+                                    <span class="price">$16</span>
+                                </div>
+                                <p class="description">Single Farmed Barramundi fillet (Battered, Crumbed, or Grilled).</p>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-image-placeholder">
+                                <span class="coming-soon-text">Image coming soon</span>
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Calamari & Chips Meal</h3>
+                                    <span class="price">$15</span>
+                                </div>
+                                <p class="description">6 crispy golden calamari rings served with hot chips.</p>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-img-container">
+                                <img src="image/seafood basket.JPG" alt="Seafood Basket Deluxe" class="item-real-img" loading="lazy">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Seafood Basket Deluxe</h3>
+                                    <span class="price price-options" aria-label="Basket & Chips $16, + Can Drink $17, + 600ml Drink $19">
+                                        <span>Basket &amp; Chips <strong>$16</strong></span>
+                                        <span>+ Can Drink <strong>$17</strong></span>
+                                        <span>+ 600ml Drink <strong>$19</strong></span>
+                                    </span>
+                                </div>
+                                <p class="description">Served with hot chips by default. Includes 2 fish cocktails, 2 calamari rings, 1 prawn cutlet, and 1 seafood stick.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection mt-4">
+                    <h3 class="subsection-title">Roast BBQ Chicken</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="item-img-container">
+                                <img src="image/IMG_5349.jpg" alt="Whole BBQ Roast Chicken" class="item-real-img" loading="lazy">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Whole Roast BBQ Chicken</h3>
+                                    <span class="price">$19</span>
+                                </div>
+                                <p class="description">Whole freshly roasted BBQ chicken, seasoned and cooked to perfection.</p>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-img-container">
+                                <img src="image/Half chicken and chips.jpg" alt="Half Chicken & Chips" class="item-real-img" loading="lazy">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>1/2 Roast Chicken & Chips Meal</h3>
+                                    <span class="price">$17</span>
+                                </div>
+                                <p class="description">Half roast BBQ chicken served with hot chips.</p>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-image-placeholder">
+                                <span class="coming-soon-text">Image coming soon</span>
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>1/4 Roast Chicken Only</h3>
+                                    <span class="price">$7</span>
+                                </div>
+                                <p class="description">Quarter piece of juicy roast BBQ chicken.</p>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-image-placeholder">
+                                <span class="coming-soon-text">Image coming soon</span>
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>1/2 Roast Chicken Only</h3>
+                                    <span class="price">$12</span>
+                                </div>
+                                <p class="description">Half piece of juicy roast BBQ chicken.</p>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-image-placeholder">
+                                <span class="coming-soon-text">Image coming soon</span>
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>1/4 Roast Chicken & Chips Meal</h3>
+                                    <span class="price">$12</span>
+                                </div>
+                                <p class="description">Quarter roast BBQ chicken served with hot chips.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Milkshakes & Cold Beverages -->
+            <section id="milkshakes" class="menu-section">
+                <h2 class="section-title">Milkshakes & Cold Drinks</h2>
+
+                <div class="milkshake-promo-banner">
+                    <div class="promo-title">
+                        <h3>Hand-crafted Milkshakes & Thickshakes</h3>
+                    </div>
+                    <p class="promo-desc">Classic Milkshake $11 / Extra Thickshake $13 | Add Malt +$1</p>
+                </div>
+
+                <div class="flavor-chips-container">
+                    <h4>Select your favorite flavor:</h4>
+                    <div class="flavor-chips">
+                        <span class="flavor-chip">Chocolate</span>
+                        <span class="flavor-chip">Strawberry</span>
+                        <span class="flavor-chip">Caramel</span>
+                        <span class="flavor-chip">Lime</span>
+                        <span class="flavor-chip">Vanilla</span>
+                        <span class="flavor-chip">Banana</span>
+                        <span class="flavor-chip limited">Mango (Limited)</span>
+                    </div>
+                </div>
+
+                <div class="menu-grid">
+                    <div class="menu-item drink-card">
+                        <div class="item-img-container">
+                            <img src="image/milk shake.JPG" alt="Classic milkshake" class="item-real-img" loading="lazy" decoding="async">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Classic Milkshake</h3>
+                                <span class="price">$11</span>
+                            </div>
+                            <p class="description">Blended with fresh full cream milk and premium ice cream. 7 flavors available. Add Malt +$1.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item drink-card highlight-card">
+                        <div class="item-img-container">
+                            <img src="image/milk shake.JPG" alt="Extra thickshake" class="item-real-img" loading="lazy" decoding="async">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Extra Thickshake</h3>
+                                <span class="price">$13</span>
+                            </div>
+                            <p class="description">Double scoop ice cream base for an extra rich and creamy texture. 7 flavors available. Add Malt +$1.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Coffee & Hot Drinks -->
+            <section id="coffee" class="menu-section">
+                <h2 class="section-title">Coffee & Hot Drinks</h2>
+
+                <div class="coffee-notice-banner">
+                    <div class="notice-text">
+                        <h4>All Coffee, Hot Chocolate & Tea Flat Rate $4.00</h4>
+                        <p>Note: All milk-based coffees & hot chocolate are prepared exclusively with Full Cream Milk. Tea selection features classic English Breakfast Tea.</p>
+                    </div>
+                </div>
+
+                <div class="menu-grid">
+                    <div class="menu-item coffee-card">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Flat White / Latte / Cappuccino</h3>
+                                <span class="price">$4</span>
+                            </div>
+                            <p class="description">Freshly extracted espresso topped with silky steamed full cream milk.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item coffee-card">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Long Black / Espresso</h3>
+                                <span class="price">$4</span>
+                            </div>
+                            <p class="description">Rich and bold double shot espresso extracted from specialty roast beans.</p>
+                        </div>
+                    </div>
+
+                    <!-- Hot Chocolate -->
+                    <div class="menu-item coffee-card">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Hot Chocolate</h3>
+                                <span class="price">$4</span>
+                            </div>
+                            <p class="description">Rich, velvety hot cocoa topped with silky steamed full cream milk.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item coffee-card">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>English Breakfast Tea</h3>
+                                <span class="price">$4</span>
+                            </div>
+                            <p class="description">Classic aromatic English Breakfast Tea brewed fresh (Optional full cream milk available).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fresh Salads & Sandwiches -->
+            <section id="salads" class="menu-section">
+                <h2 class="section-title">Fresh Salads & Sandwiches</h2>
+
+                <div class="bread-notice-banner">
+                    <div class="bread-text">
+                        <h4>Daily Fresh Baked Bread Guarantee</h4>
+                        <p>All our sandwiches and rolls are made with fresh daily baked bread delivered every morning.</p>
+                    </div>
+                </div>
+
+                <!-- 9 Salad Ingredients Section -->
+                <div class="salad-ingredients-box">
+                    <h3 class="subsection-title">9 Daily Fresh Salad Ingredients:</h3>
+                    <p class="ingredient-subtext">These fresh ingredients are available in our Fresh Salad Box or added into any burger/sandwich!</p>
+
+                    <div class="ingredients-grid">
+                        <div class="ing-item">Avocado</div>
+                        <div class="ing-item">Carrot</div>
+                        <div class="ing-item">Red Onion</div>
+                        <div class="ing-item">Cucumber</div>
+                        <div class="ing-item">Pineapple</div>
+                        <div class="ing-item">Tomato</div>
+                        <div class="ing-item">Lettuce</div>
+                        <div class="ing-item">Beetroot</div>
+                        <div class="ing-item">Cooked White Onion</div>
+                    </div>
+                </div>
+
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Fresh Salad Box</h3>
+                                <span class="price price-options" aria-label="Small $7, medium $10, large $13">
+                                    <span>Small <strong>$7</strong></span>
+                                    <span>Medium <strong>$10</strong></span>
+                                    <span>Large <strong>$13</strong></span>
+                                </span>
+                            </div>
+                            <p class="description">Customized fresh salad box featuring all 9 daily fresh vegetables.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Cheese Sandwich</h3>
+                                <span class="price">$6</span>
+                            </div>
+                            <p class="description">Melted tasty cheese slices served on daily fresh baked bread.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Full Salad Sandwich</h3>
+                                <span class="price">$9</span>
+                            </div>
+                            <p class="description">Crisp lettuce, tomato, beetroot, grated carrot, and onion on fresh bread.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Cheese & Salad Sandwich</h3>
+                                <span class="price">$10</span>
+                            </div>
+                            <p class="description">Sliced cheese with full fresh salad (lettuce, tomato, beetroot, carrot, onion).</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Single Filling Sandwich (Egg/Ham/Chicken/Tuna/Salmon)</h3>
+                                <span class="price">$8</span>
+                            </div>
+                            <p class="description">Your choice of fried egg, ham, chicken, tuna, or salmon on fresh baked bread.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Meat & Full Salad Sandwich</h3>
+                                <span class="price">$11</span>
+                            </div>
+                            <p class="description">Choice of meat with full salad (lettuce, tomato, beetroot, carrot, onion). Add Cheese +$4.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Snacks & Sides -->
+            <section id="battered" class="menu-section">
+                <h2 class="section-title">Snacks & Sides</h2>
+
+                <div class="menu-grid">
+                    <!-- Potato Scallops -->
+                    <div class="menu-item">
+                        <div class="item-img-container">
+                            <img src="image/potato scollps.jpg" alt="Potato Scallop" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Potato Scallops <span style="font-size: 0.8em; color: #2a9d8f; margin-left: 6px;">(House-made)</span></h3>
+                                <span class="price price-options" aria-label="$1.50 each or 6 for $7.50">
+                                    <span>Each <strong>$1.50</strong></span>
+                                    <span>6 for <strong>$7.50</strong></span>
+                                </span>
+                            </div>
+                            <p class="description">House-made thick sliced potato battered and fried golden crispy.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fish Cocktails -->
+                    <div class="menu-item">
+                        <div class="item-img-container">
+                            <img src="image/fish cocktail.jpg" alt="Fish Cocktails" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Fish Cocktails <span style="font-size: 0.8em; color: #2a9d8f; margin-left: 6px;">(House-made)</span></h3>
+                                <span class="price price-options" aria-label="$2 each or 6 for $10">
+                                    <span>Each <strong>$2</strong></span>
+                                    <span>6 for <strong>$10</strong></span>
+                                </span>
+                            </div>
+                            <p class="description">House-made bite-sized crispy battered fish pieces.</p>
+                        </div>
+                    </div>
+
+                    <!-- Battered Sav -->
+                    <div class="menu-item">
+                        <div class="item-img-container">
+                            <img src="image/Batter sausage.jpg" alt="Battered Sav" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Battered Sav / Sausage <span class="pork-badge" style="font-size: 0.8em; color: #e63946; margin-left: 8px;">(Pork)</span> <span style="font-size: 0.8em; color: #2a9d8f; margin-left: 6px;">(House-made)</span></h3>
+                                <span class="price">$3 ea</span>
+                            </div>
+                            <p class="description">House-made pork sausage dipped in golden batter and fried crisp.</p>
+                        </div>
+                    </div>
+
+                    <!-- Seafood Stick -->
+                    <div class="menu-item">
+                        <div class="item-img-container">
+                            <img src="image/seafood stick.jpg" alt="Seafood Stick" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Seafood Stick <span style="font-size: 0.8em; color: #2a9d8f; margin-left: 6px;">(House-made)</span></h3>
+                                <span class="price">$2 ea</span>
+                            </div>
+                            <p class="description">House-made classic battered golden seafood stick.</p>
+                        </div>
+                    </div>
+
+                    <!-- Chic Sticks -->
+                    <div class="menu-item">
+                        <div class="item-img-container">
+                            <img src="image/chicken kebs.jpg" alt="Chic Sticks" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Chic Sticks / Chicken Kebab Skewer</h3>
+                                <span class="price">$5 ea</span>
+                            </div>
+                            <p class="description">Crumbed crispy chicken skewer stick.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pineapple Fritters -->
+                    <div class="menu-item">
+                        <div class="item-img-container">
+                            <img src="image/pineapple fritter.jpg" alt="Pineapple Fritter" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Pineapple Fritter <span style="font-size: 0.8em; color: #2a9d8f; margin-left: 6px;">(House-made)</span></h3>
+                                <span class="price">$3 ea</span>
+                            </div>
+                            <p class="description">House-made golden battered pineapple ring dusted with cinnamon sugar.</p>
+                        </div>
+                    </div>
+
+                    <!-- Hot Chips -->
+                    <div class="menu-item">
+                        <div class="item-img-container">
+                            <img src="image/hot chips.jpg" alt="Hot Chips" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Signature Chicken Salt Hot Chips <span class="gf-badge" style="font-size: 0.8em; color: #2a9d8f; margin-left: 8px;">(Gluten-Free*)</span></h3>
+                                <span class="price price-options price-options--four" aria-label="Cup $5, small $7, medium $10, large $13">
+                                    <span>Cup <strong>$5</strong></span>
+                                    <span>Small <strong>$7</strong></span>
+                                    <span>Medium <strong>$10</strong></span>
+                                    <span>Large <strong>$13</strong></span>
+                                </span>
+                            </div>
+                            <p class="description">Classic hot potato chips seasoned with flavorful chicken salt. <br><span style="font-size: 0.9em; color: #6c757d;">*Please note: Cooked in a shared fryer with gluten-containing foods.</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Sweet Potato Chips (Unavailable) -->
+                    <div class="menu-item" style="opacity: 0.65; background: rgba(248, 249, 250, 0.5); border: 1px dashed #ced4da;">
+                        <div class="item-image-placeholder" style="background: #e9ecef;">
+                            <span class="coming-soon-text" style="color: #6c757d;">Temporarily Unavailable</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 style="color: #6c757d;">Sweet Potato Chips <span style="font-size: 0.8em; color: #e63946; margin-left: 8px;">(Sold Out)</span></h3>
+                                <span class="price" style="color: #adb5bd;">--</span>
+                            </div>
+                            <p class="description" style="color: #adb5bd;">Our sweet potato chips are currently unavailable. We apologize for any inconvenience.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Calamari Rings <span style="font-size: 0.8em; color: #2a9d8f; margin-left: 6px;">(House-made)</span></h3>
+                                <span class="price price-options" aria-label="$2 each or 6 for $10">
+                                    <span>Each <strong>$2</strong></span>
+                                    <span>6 for <strong>$10</strong></span>
+                                </span>
+                            </div>
+                            <p class="description">House-made crumbed fried tender calamari rings.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Prawn Cutlets</h3>
+                                <span class="price">$2.5 ea</span>
+                            </div>
+                            <p class="description">Golden crispy fried prawn cutlets.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Dim Sim / Fish Cake</h3>
+                                <span class="price">$4 ea</span>
+                            </div>
+                            <p class="description">Deep fried chicken dim sim or traditional fish cake.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Chiko Roll / Spring Roll</h3>
+                                <span class="price">$5 ea</span>
+                            </div>
+                            <p class="description">Classic Australian Chiko roll or large spring roll.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Large Chicken Schnitzel Piece</h3>
+                                <span class="price">$10 ea</span>
+                            </div>
+                            <p class="description">Large golden crumbed chicken breast schnitzel fillet.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Corn Jack</h3>
+                                <span class="price">$4 ea</span>
+                            </div>
+                            <p class="description">Sweet corn kernels encased in golden batter.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Chicken Nuggets</h3>
+                                <span class="price">6 for $6</span>
+                            </div>
+                            <p class="description">Bite-sized golden crispy chicken nuggets.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Crispy Chicken Wings</h3>
+                                <span class="price">3 for $8</span>
+                            </div>
+                            <p class="description">Crispy on the outside, tender inside fried chicken wings.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image-placeholder">
+                            <span class="coming-soon-text">Image coming soon</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Seasoned Potato Wedges <span class="spicy-badge" style="font-size: 0.8em; color: #e63946; margin-left: 8px;">(Contains Chilli)</span></h3>
+                                <span class="price">$12</span>
+                            </div>
+                            <p class="description">Seasoned potato wedges served with sweet chili & sour cream.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-img-container">
+                            <img src="image/small gravy.jpg" alt="Small Hot Chicken Gravy Tub" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Small Hot Chicken Gravy Tub</h3>
+                                <span class="price">$2</span>
+                            </div>
+                            <p class="description">Rich savory hot roast chicken gravy.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-img-container">
+                            <img src="image/large gravy.jpg" alt="Large Hot Chicken Gravy Tub" class="item-real-img" loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Large Hot Chicken Gravy Tub</h3>
+                                <span class="price">$4</span>
+                            </div>
+                            <p class="description">Rich savory hot roast chicken gravy.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Deals & Extras -->
+            <section id="deals" class="menu-section">
+                <h2 class="section-title">Deals & Extras</h2>
+
+                <div class="deal-card">
+                    <h3>Make it a Meal Deal!</h3>
+                    <p>Add to any Burger, Fish, or Roast Chicken item:</p>
+                    <ul>
+                        <li>+ Chips & Can Drink <span class="highlight">+$6</span></li>
+                        <li>+ Chips & 600ml Bottle Drink <span class="highlight">+$8</span></li>
+                    </ul>
+                </div>
+
+                <div class="subsection mt-4">
+                    <h3 class="subsection-title">Family Deals</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item deal">
+                            <div class="item-image-placeholder">
+                                <span class="coming-soon-text">Image coming soon</span>
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Whole Chicken Family Deal</h3>
+                                    <span class="price">$35</span>
+                                </div>
+                                <p class="description">1 Whole Roast BBQ Chicken + Large Chips + 1.25L Drink bottle.</p>
+                            </div>
+                        </div>
+
+                        <div class="menu-item deal">
+                            <div class="item-image-placeholder">
+                                <span class="coming-soon-text">Image coming soon</span>
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Seafood Feast Family Deal</h3>
+                                    <span class="price">$50</span>
+                                </div>
+                                <p class="description">4 fish cocktails + 4 calamari rings + 4 prawn cutlets + 2 pineapple fritters + 2 seafood sticks + Large Chips + 1.25L Drink.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection mt-4">
+                    <h3 class="subsection-title">Kid's Meals</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="item-image-placeholder">
+                                <span class="coming-soon-text">Image coming soon</span>
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Kid's Fish Meal</h3>
+                                    <span class="price">$11</span>
+                                </div>
+                                <p class="description">3 fish cocktails served with hot chips.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image-placeholder">
+                                <span class="coming-soon-text">Image coming soon</span>
+                            </div>
+                            <div class="item-content">
+                                <div class="item-header">
+                                    <h3>Kid's Nugget Meal</h3>
+                                    <span class="price">$11</span>
+                                </div>
+                                <p class="description">6 chicken nuggets served with hot chips.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-photo-notice">
+                <span>100% Real Food Photography - All images taken on site</span>
+            </div>
+            <p class="halal-disclaimer">Please note: meat served in-store is not Halal certified.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sweet & Salt Menu | All Rights Reserved</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Admin Analytics Modal -->
+    <div id="adminModal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="adminModalTitle">
+            <div class="modal-header">
+                <h3 id="adminModalTitle">Page Views & Analytics Dashboard</h3>
+                <button id="closeAdminModal" class="close-modal-btn" type="button" aria-label="Close analytics dashboard">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="stats-cards-grid">
+                    <div class="stat-card">
+                        <span class="stat-num" id="statTotalViews">0</span>
+                        <span class="stat-label">Total Views</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num" id="statTodayViews">0</span>
+                        <span class="stat-label">Today's Views</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num" id="statSessionViews">0</span>
+                        <span class="stat-label">Session Views</span>
+                    </div>
+                </div>
+
+                <div class="analytics-section">
+                    <h4>Category Heatmap</h4>
+                    <div id="categoryHeatmap" class="heatmap-container">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+
+                <div class="analytics-section">
+                    <h4>Real-time Activity Logs</h4>
+                    <ul id="visitLogsList" class="visit-logs-list">
+                        <!-- Rendered by JS -->
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="resetStatsBtn" class="danger-btn" type="button">Reset Stats</button>
+                <button id="closeAdminModalBottom" class="primary-btn" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+        ↑
+    </button>
+    <script src="script.js"></script>
+</body>
+</html>
