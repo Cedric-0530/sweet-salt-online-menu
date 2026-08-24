@@ -21,6 +21,10 @@
 </p>
 
 <p align="center">
+  <a href="https://cedric-0530.github.io/sweet-salt-online-menu/"><strong>View the live menu →</strong></a>
+</p>
+
+<p align="center">
   <img src="image/bowral%20burger.jpg" width="760" alt="Big Bowral Beef Burger from the Sweet & Salt menu">
 </p>
 
@@ -68,9 +72,8 @@ Then open [http://localhost:8000](http://localhost:8000).
 
 ## Deployment
 
-This repository is ready for any static host. To publish it with GitHub Pages, enable **Settings → Pages**, choose **Deploy from a branch**, and select the `main` branch with the `/(root)` folder.
+The live website is published with GitHub Pages: [cedric-0530.github.io/sweet-salt-online-menu](https://cedric-0530.github.io/sweet-salt-online-menu/).
 
 ## Notes
 
 Menu availability and prices can change. Update the HTML source whenever the in-store menu changes so the online version stays accurate.
-
