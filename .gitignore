@@ -1,0 +1,7 @@
+# macOS Finder metadata
+.DS_Store
+
+# Local editor and temporary files
+.vscode/
+*.swp
+*~
