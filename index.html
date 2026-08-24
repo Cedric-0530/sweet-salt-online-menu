@@ -22,11 +22,6 @@
             <div class="real-photo-badge">
                 <span>100% Real Food Photography - All images taken on site</span>
             </div>
-            <div class="top-bar-controls">
-                <button id="adminStatsBtn" class="admin-badge-btn" type="button" title="View Page Analytics" aria-haspopup="dialog">
-                    <span>Page Views</span>: <strong id="headerViewCount">...</strong>
-                </button>
-            </div>
         </div>
     </div>
 
@@ -1078,50 +1073,6 @@
                 <p>&copy; 2026 Sweet & Salt Menu | All Rights Reserved</p>
             </div>
         </footer>
-    </div>
-
-    <!-- Admin Analytics Modal -->
-    <div id="adminModal" class="modal-overlay" aria-hidden="true">
-        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="adminModalTitle">
-            <div class="modal-header">
-                <h3 id="adminModalTitle">Page Views & Analytics Dashboard</h3>
-                <button id="closeAdminModal" class="close-modal-btn" type="button" aria-label="Close analytics dashboard">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="stats-cards-grid">
-                    <div class="stat-card">
-                        <span class="stat-num" id="statTotalViews">0</span>
-                        <span class="stat-label">Total Views</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-num" id="statTodayViews">0</span>
-                        <span class="stat-label">Today's Views</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-num" id="statSessionViews">0</span>
-                        <span class="stat-label">Session Views</span>
-                    </div>
-                </div>
-
-                <div class="analytics-section">
-                    <h4>Category Heatmap</h4>
-                    <div id="categoryHeatmap" class="heatmap-container">
-                        <!-- Rendered by JS -->
-                    </div>
-                </div>
-
-                <div class="analytics-section">
-                    <h4>Real-time Activity Logs</h4>
-                    <ul id="visitLogsList" class="visit-logs-list">
-                        <!-- Rendered by JS -->
-                    </ul>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button id="resetStatsBtn" class="danger-btn" type="button">Reset Stats</button>
-                <button id="closeAdminModalBottom" class="primary-btn" type="button">Close</button>
-            </div>
-        </div>
     </div>
 
     <!-- Back to Top Button -->
