@@ -821,6 +821,65 @@ a:focus-visible {
     margin-bottom: 1rem;
 }
 
+/* In-store Cold Drinks */
+.drinks-showcase {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    background: #f7fafc;
+}
+
+.drinks-showcase img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 28rem;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.drinks-showcase h4 {
+    margin-bottom: 0.75rem;
+    color: var(--dark-color);
+    font-size: 1.2rem;
+}
+
+.drinks-showcase p {
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.drinks-showcase .drinks-availability {
+    margin-top: 0.75rem;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+.cold-drink-card .item-header {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 0;
+}
+
+.cold-drink-card .price {
+    justify-self: start;
+}
+
+.price-unconfirmed {
+    font-size: 0.85rem;
+}
+
+@media (max-width: 767px) {
+    .drinks-showcase {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
+    }
+}
+
 /* Responsive Rules */
 @media (max-width: 1023px) {
     .menu-grid {
@@ -1104,4 +1163,3 @@ a:focus-visible {
         transform: translateY(-3px);
     }
 }
-
