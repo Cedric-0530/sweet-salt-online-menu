@@ -446,6 +446,86 @@ a:focus-visible {
     transform: scale(1.06);
 }
 
+/* Preparation Photo Carousel */
+.item-img-carousel {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #f7fafc;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    position: relative;
+}
+
+.carousel-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+}
+
+.carousel-img.active {
+    opacity: 1;
+}
+
+.menu-item:hover .carousel-img.active {
+    transform: scale(1.06);
+    transition: opacity 0.45s ease, transform 0.4s ease;
+}
+
+.carousel-labels {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 12px);
+    max-width: 21rem;
+    display: flex;
+    gap: 4px;
+    z-index: 2;
+}
+
+.carousel-label {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 4px 2px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(4px);
+    color: #495057;
+    border: 1.5px solid rgba(255,255,255,0.9);
+    transition: all 0.25s ease;
+    user-select: none;
+}
+
+.carousel-label.active {
+    background: rgba(42, 157, 143, 0.88);
+    color: #fff;
+    border-color: rgba(42, 157, 143, 0.95);
+}
+
+.image-note {
+    margin-top: 0.5rem;
+    color: #64748b;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
 /* Chef's Choice Highlight Badge */
 .menu-item.chef-choice {
     border: 2px solid #ecc94b;
@@ -881,6 +961,126 @@ a:focus-visible {
 }
 
 /* Responsive Rules */
+[hidden] {
+    display: none !important;
+}
+
+.menu-item--text .item-header {
+    margin-top: 0;
+}
+
+.menu-item--text .chef-badge {
+    position: static;
+    align-self: flex-start;
+    margin-bottom: 0.65rem;
+}
+
+.menu-grid {
+    align-items: start;
+}
+
+.meal-upgrade-link {
+    display: block;
+    margin-top: 0.8rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e2e8f0;
+    color: #924020;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-underline-offset: 3px;
+}
+
+.meal-upgrade-link:hover {
+    color: var(--primary-hover);
+}
+
+.drink-group + .drink-group {
+    margin-top: 1.5rem;
+}
+
+.drink-group-title {
+    margin-bottom: 0.75rem;
+    color: var(--dark-color);
+    font-size: 1.05rem;
+}
+
+.menu-notes {
+    margin-bottom: 1.5rem;
+    border: 1px solid #dbe4ed;
+    border-radius: 12px;
+    background: #f8fafc;
+    color: #475569;
+}
+
+.menu-notes summary {
+    padding: 0.8rem 1rem;
+    min-height: 44px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.menu-notes summary:focus-visible,
+.deal-card:focus-visible {
+    outline: 3px solid rgba(230, 57, 70, 0.55);
+    outline-offset: 3px;
+}
+
+.menu-notes-content {
+    display: grid;
+    gap: 0.6rem;
+    padding: 0 1rem 1rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.coffee-notice-banner p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.dietary-badge,
+.status-badge {
+    width: fit-content;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    background: #fff7ed;
+    color: #9a3412;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.is-unavailable {
+    border: 1px dashed #94a3b8;
+    background: #f8fafc;
+}
+
+.price-unavailable {
+    background: #e2e8f0;
+    color: #475569;
+    border-color: #cbd5e1;
+    font-size: 0.8rem;
+}
+
+.menu-section.is-filtered .fish-guarantee-box,
+.menu-section.is-filtered .raw-fish-showcase,
+.menu-section.is-filtered .milkshake-promo-banner,
+.menu-section.is-filtered .drinks-showcase,
+.menu-section.is-filtered .coffee-notice-banner,
+.menu-section.is-filtered .bread-notice-banner,
+.menu-section.is-filtered .salad-ingredients-box,
+.menu-section.is-filtered .deal-card {
+    display: none;
+}
+
+.carousel-label {
+    min-height: 44px;
+    font-family: inherit;
+}
+
 @media (max-width: 1023px) {
     .menu-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1111,7 +1311,8 @@ a:focus-visible {
         transform: none;
     }
 
-    .menu-item:hover .item-real-img {
+    .menu-item:hover .item-real-img,
+    .menu-item:hover .carousel-img.active {
         transform: none;
     }
 }
@@ -1161,5 +1362,331 @@ a:focus-visible {
     .back-to-top:hover {
         background: var(--primary-color);
         transform: translateY(-3px);
+    }
+}
+
+/* Menu presentation: warm surfaces, clear prices and comfortable navigation. */
+:root {
+    --primary-color: #a92836;
+    --primary-hover: #821b29;
+    --dark-color: #1d3557;
+    --text-color: #263449;
+    --text-muted: #536174;
+    --glass-bg: #fffdf9;
+    --glass-border: #e8e2db;
+    --shadow-sm: 0 3px 14px rgba(31, 46, 66, 0.055);
+    --shadow-md: 0 8px 24px rgba(31, 46, 66, 0.12);
+    --shadow-lg: 0 16px 48px rgba(31, 46, 66, 0.08);
+}
+
+body {
+    background: #f4f1ec;
+}
+
+.background-decor {
+    display: none;
+}
+
+.top-bar {
+    box-shadow: none;
+    letter-spacing: 0.01em;
+}
+
+.container {
+    margin-top: 1.25rem;
+    padding: clamp(1.25rem, 3vw, 2.5rem);
+    border-radius: 22px;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.main-header {
+    gap: 2rem;
+    margin-bottom: 1.75rem;
+}
+
+.brand-logo-container {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr);
+    column-gap: 1.25rem;
+    row-gap: 0.2rem;
+    align-items: center;
+}
+
+.brand-logo-image-wrapper {
+    grid-row: 1 / span 2;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.brand-logo-image-wrapper:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.brand-logo-img {
+    max-width: 100px;
+    max-height: 90px;
+}
+
+.brand-logo-container h1 {
+    align-self: end;
+    color: var(--dark-color);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.65rem);
+    line-height: 1.1;
+    text-wrap: balance;
+}
+
+.subtitle {
+    align-self: start;
+    color: #536174;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    letter-spacing: 0;
+}
+
+.search-label {
+    display: block;
+    margin: 0 0 0.5rem 0.2rem;
+    color: var(--dark-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    width: 20px;
+    height: 20px;
+    color: #536174;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    pointer-events: none;
+}
+
+.search-box input {
+    min-height: 48px;
+    padding-left: 3rem;
+    border: 1px solid #c8cdd2;
+    border-radius: 12px;
+    box-shadow: none;
+    font: inherit;
+    font-size: 1rem;
+}
+
+.clear-search-btn {
+    right: 0.2rem;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+}
+
+.category-nav {
+    gap: 0.5rem;
+    padding: 0.65rem;
+    border-color: #e5e1db;
+    border-radius: 14px;
+    background: rgba(255, 253, 249, 0.97);
+    box-shadow: 0 4px 16px rgba(31, 46, 66, 0.07);
+}
+
+.nav-btn {
+    border-color: #d7dbe0;
+    box-shadow: none;
+    transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.nav-btn:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.nav-btn.active,
+.chef-nav-btn.active {
+    background: var(--dark-color);
+    color: #fff;
+    border-color: var(--dark-color);
+    box-shadow: none;
+}
+
+.chef-nav-btn:not(.active) {
+    background: #fff7e6;
+    color: #785018;
+    border-color: #e4c792;
+}
+
+.menu-notes {
+    border-color: #e4ddd3;
+    background: #f9f6f0;
+    color: #39485b;
+}
+
+.section-title {
+    font-size: clamp(1.75rem, 2.8vw, 2.2rem);
+    text-wrap: balance;
+}
+
+.section-title::after {
+    width: 48px;
+    height: 3px;
+    margin-top: 0.6rem;
+}
+
+.menu-grid {
+    gap: 1.15rem;
+}
+
+.menu-item {
+    border: 1px solid #e9e4de;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.menu-item:hover {
+    transform: none;
+    border-color: #d5c9be;
+}
+
+.item-img-container,
+.item-img-carousel {
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.carousel-label.active {
+    background: #165f55;
+    border-color: #165f55;
+}
+
+.item-header {
+    gap: 0.75rem;
+}
+
+.item-header h3 {
+    color: var(--dark-color);
+    line-height: 1.35;
+    text-wrap: balance;
+}
+
+.description {
+    color: #424f60;
+    line-height: 1.6;
+}
+
+.price {
+    color: #942132;
+    background: #fff2ef;
+    border-color: #f0d2cd;
+    border-radius: 9px;
+    font-variant-numeric: tabular-nums;
+}
+
+.price-options strong {
+    color: #942132;
+}
+
+.menu-item.chef-choice {
+    background: #fffefa;
+    border-color: #d7b264;
+}
+
+.chef-badge {
+    background: #f5dfad;
+    color: #5f3d0b;
+    box-shadow: none;
+}
+
+.meal-upgrade-link {
+    color: #87321c;
+    text-underline-offset: 4px;
+}
+
+.image-note {
+    color: #536174;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible,
+.menu-notes summary:focus-visible,
+.deal-card:focus-visible {
+    outline: 3px solid #a92836;
+    outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 1.25rem 1rem;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .main-header {
+        text-align: left;
+    }
+
+    .brand-logo-container {
+        grid-template-columns: 76px minmax(0, 1fr);
+        column-gap: 1rem;
+        align-items: center;
+    }
+
+    .brand-logo-img {
+        max-width: 76px;
+        max-height: 75px;
+    }
+
+    .brand-logo-container h1 {
+        font-size: clamp(1.65rem, 6vw, 2rem);
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+    }
+
+    .search-filter-wrapper {
+        margin-top: 1.25rem;
+    }
+
+    .category-nav {
+        gap: 0.5rem;
+        margin: 0 -1rem 1.5rem;
+        padding: 0.7rem 1rem;
+        border-radius: 0;
+    }
+
+    .menu-grid {
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .item-header,
+    .cold-drink-card .item-header {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+}
+
+@media (max-height: 500px) {
+    .category-nav {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        scrollbar-width: thin;
+        scroll-snap-type: x proximity;
+    }
+
+    .nav-btn {
+        scroll-snap-align: start;
     }
 }

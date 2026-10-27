@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
     <link rel="icon" type="image/png" href="icon/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
-    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="stylesheet" href="style.css?v=13">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -30,17 +30,18 @@
             <!-- Picture Logo placed inside the webpage header -->
             <div class="brand-logo-container">
                 <div class="brand-logo-image-wrapper">
-                    <img src="icon/图片logo.png" alt="Sweet & Salt Picture Logo" class="brand-logo-img">
+                    <img src="icon/图片logo.png" alt="" class="brand-logo-img">
                 </div>
-                <h1 class="sr-only">Sweet & Salt</h1>
+                <h1>Sweet &amp; Salt</h1>
                 <p class="subtitle">Delicious Burgers, Fish & Chips, Milkshakes & Fresh Sandwiches</p>
             </div>
 
             <!-- Global Search Bar -->
             <div class="search-filter-wrapper">
+                <label class="search-label" for="menuSearch">Search the menu</label>
                 <div class="search-box">
-                    <label class="sr-only" for="menuSearch">Search the menu</label>
-                    <input type="search" id="menuSearch" placeholder="Search menu items or ingredients..." autocomplete="off" aria-describedby="searchFeedback">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 4 4"></path></svg>
+                    <input type="search" id="menuSearch" placeholder="Search dishes or ingredients" autocomplete="off" aria-describedby="searchFeedback">
                     <button id="clearSearch" class="clear-search-btn" type="button" aria-label="Clear menu search" hidden>&times;</button>
                 </div>
                 <p id="searchFeedback" class="search-feedback" role="status" aria-live="polite"></p>
@@ -59,6 +60,18 @@
             <button class="nav-btn" type="button" data-target="battered" aria-label="Snacks and Sides"><span class="nav-label-full">Snacks &amp; Sides</span><span class="nav-label-short">Sides</span></button>
             <button class="nav-btn" type="button" data-target="deals" aria-label="Deals and Extras"><span class="nav-label-full">Deals &amp; Extras</span><span class="nav-label-short">Deals</span></button>
         </nav>
+
+        <details class="menu-notes">
+            <summary>Menu information &amp; dietary notes</summary>
+            <div class="menu-notes-content">
+                <p><strong>Prices &amp; availability:</strong> Prices are in AUD. Ask our team to confirm available sizes, flavours and today’s selection.</p>
+                <p><strong>Dietary requirements:</strong> Please speak to our team before ordering about allergies or dietary needs. Meat served in-store is not Halal certified.</p>
+                <p><strong>Shared fryer:</strong> Hot chips are cooked in a shared fryer with gluten-containing foods.</p>
+                <p><strong>Chilli:</strong> Dishes marked “Contains chilli” contain chilli.</p>
+                <p><strong>Pork:</strong> Dishes marked “Contains pork” contain pork.</p>
+                <p><strong>Coffee:</strong> Milk-based coffees and hot chocolate are prepared with full cream milk.</p>
+            </div>
+        </details>
 
         <main class="menu-content" id="menuContent">
             <p id="noResults" class="no-results" role="status" hidden>No menu items match that search. Try another ingredient or dish name.</p>
@@ -79,6 +92,7 @@
                                 <span class="price">$15</span>
                             </div>
                             <p class="description">Juicy beef patty, crispy bacon, fried egg, cheese, lettuce, tomato, beetroot, grilled onion, and signature BBQ sauce.</p>
+                            <a class="meal-upgrade-link" href="#mealDeals">Make it a meal: chips + drink from +$6 <span aria-hidden="true">→</span></a>
                         </div>
                     </div>
 
@@ -90,10 +104,11 @@
                         </div>
                         <div class="item-content">
                             <div class="item-header">
-                                <h3>Grilled Portuguese Chicken Burger <span class="spicy-badge" style="font-size: 0.8em; color: #e63946; margin-left: 8px;">(Contains Chilli)</span></h3>
+                                <h3>Grilled Portuguese Chicken Burger <span class="dietary-badge">Contains chilli</span></h3>
                                 <span class="price">$15</span>
                             </div>
                             <p class="description">Tender grilled marinated chicken breast, melted cheese, crisp lettuce, spicy chili sauce, and creamy mayo.</p>
+                            <a class="meal-upgrade-link" href="#mealDeals">Make it a meal: chips + drink from +$6 <span aria-hidden="true">→</span></a>
                         </div>
                     </div>
 
@@ -122,6 +137,7 @@
                                 <span class="price">$15</span>
                             </div>
                             <p class="description">Golden crumbed chicken schnitzel fillet, crisp lettuce, and mayonnaise.</p>
+                            <a class="meal-upgrade-link" href="#mealDeals">Make it a meal: chips + drink from +$6 <span aria-hidden="true">→</span></a>
                         </div>
                     </div>
 
@@ -150,13 +166,11 @@
                                 <span class="price">$15</span>
                             </div>
                             <p class="description">Crispy fried chicken, lettuce, and mayo.</p>
+                            <a class="meal-upgrade-link" href="#mealDeals">Make it a meal: chips + drink from +$6 <span aria-hidden="true">→</span></a>
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Small Bacon & Egg Roll</h3>
@@ -166,10 +180,7 @@
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Large Bacon & Egg Roll</h3>
@@ -189,6 +200,7 @@
                                 <span class="price">$13</span>
                             </div>
                             <p class="description">100% pure beef patty, fresh lettuce, tomato, beetroot, grilled onion, melted cheese, and BBQ sauce.</p>
+                            <a class="meal-upgrade-link" href="#mealDeals">Make it a meal: chips + drink from +$6 <span aria-hidden="true">→</span></a>
                         </div>
                     </div>
 
@@ -202,58 +214,51 @@
                                 <span class="price">$16</span>
                             </div>
                             <p class="description">Beef patty, bacon, fried egg, cheese, juicy pineapple ring, lettuce, tomato, beetroot, grilled onion, and BBQ sauce.</p>
+                            <a class="meal-upgrade-link" href="#mealDeals">Make it a meal: chips + drink from +$6 <span aria-hidden="true">→</span></a>
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
-                                <h3>Mexican Beef Burger <span class="spicy-badge" style="font-size: 0.8em; color: #e63946; margin-left: 8px;">(Contains Chilli)</span></h3>
+                                <h3>Mexican Beef Burger <span class="dietary-badge">Contains chilli</span></h3>
                                 <span class="price">$15</span>
                             </div>
                             <p class="description">Beef patty, fresh tomato, crisp lettuce, fresh avocado slices, sweet chili sauce, and sour cream.</p>
+                            <a class="meal-upgrade-link" href="#mealDeals">Make it a meal: chips + drink from +$6 <span aria-hidden="true">→</span></a>
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Crispy Fish Burger</h3>
                                 <span class="price">$13</span>
                             </div>
                             <p class="description">Crispy fried fish fillet, cheese, fresh lettuce, tomato, and tangy tartar sauce.</p>
+                            <a class="meal-upgrade-link" href="#mealDeals">Make it a meal: chips + drink from +$6 <span aria-hidden="true">→</span></a>
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Avocado Grilled Chicken Burger</h3>
                                 <span class="price">$16</span>
                             </div>
                             <p class="description">Tender grilled chicken breast, cheese, fresh sliced avocado, lettuce, and mayonnaise.</p>
+                            <a class="meal-upgrade-link" href="#mealDeals">Make it a meal: chips + drink from +$6 <span aria-hidden="true">→</span></a>
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Hawaiian Chicken Burger</h3>
                                 <span class="price">$16</span>
                             </div>
                             <p class="description">Crispy chicken fillet, grilled pineapple ring, cheese, fresh lettuce, and mayo.</p>
+                            <a class="meal-upgrade-link" href="#mealDeals">Make it a meal: chips + drink from +$6 <span aria-hidden="true">→</span></a>
                         </div>
                     </div>
 
@@ -280,6 +285,7 @@
                                 <span class="price">$10</span>
                             </div>
                             <p class="description">Beef patty, cheese slice, crisp lettuce, and tomato sauce.</p>
+                            <a class="meal-upgrade-link" href="#mealDeals">Make it a meal: chips + drink from +$6 <span aria-hidden="true">→</span></a>
                         </div>
                     </div>
                 </div>
@@ -322,9 +328,19 @@
                     <h3 class="subsection-title">Fish & Chips Specials</h3>
                     <div class="menu-grid">
                         <div class="menu-item">
-                            <div class="item-img-container">
-                                <img src="image/fish and chips.jpg" alt="Farmed Barramundi and chips meal" class="item-real-img" loading="lazy" decoding="async">
+                            <div class="item-img-carousel">
+                                <div class="carousel-track">
+                                    <img src="image/crumbed barramundi and chips new.jpg" alt="Crumbed Barramundi and chips" class="carousel-img active" loading="lazy" decoding="async">
+                                    <img src="image/battered barramudiand chips.jpg" alt="Battered Barramundi and chips" class="carousel-img" loading="lazy" decoding="async">
+                                    <img src="image/grilled-barramundi.jpg" alt="Grilled Barramundi fillet with lemon" class="carousel-img" loading="lazy" decoding="async">
+                                </div>
+                                <div class="carousel-labels">
+                                    <button class="carousel-label active" type="button" aria-pressed="true">Crumbed</button>
+                                    <button class="carousel-label" type="button" aria-pressed="false">Battered</button>
+                                    <button class="carousel-label" type="button" aria-pressed="false">Grilled</button>
+                                </div>
                             </div>
+                            <p class="image-note">Grilled photo shows the fillet only. This meal includes hot chips.</p>
                             <div class="item-content">
                                 <div class="item-header">
                                     <h3>Farmed Barramundi & Chips Meal</h3>
@@ -347,36 +363,29 @@
                             </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="item-image-placeholder">
-                                <span class="coming-soon-text">Image coming soon</span>
-                            </div>
+                        <div class="menu-item menu-item--text">
                             <div class="item-content">
                                 <div class="item-header">
                                     <h3>Wild Hake Fillet Only</h3>
                                     <span class="price">$12</span>
                                 </div>
                                 <p class="description">Single Wild Hake fillet (Battered, Crumbed, or Grilled).</p>
+                            <a class="meal-upgrade-link" href="#mealDeals">Make it a meal: chips + drink from +$6 <span aria-hidden="true">→</span></a>
                             </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="item-image-placeholder">
-                                <span class="coming-soon-text">Image coming soon</span>
-                            </div>
+                        <div class="menu-item menu-item--text">
                             <div class="item-content">
                                 <div class="item-header">
                                     <h3>Farmed Barramundi Fillet Only</h3>
                                     <span class="price">$16</span>
                                 </div>
                                 <p class="description">Single Farmed Barramundi fillet (Battered, Crumbed, or Grilled).</p>
+                            <a class="meal-upgrade-link" href="#mealDeals">Make it a meal: chips + drink from +$6 <span aria-hidden="true">→</span></a>
                             </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="item-image-placeholder">
-                                <span class="coming-soon-text">Image coming soon</span>
-                            </div>
+                        <div class="menu-item menu-item--text">
                             <div class="item-content">
                                 <div class="item-header">
                                     <h3>Calamari & Chips Meal</h3>
@@ -418,6 +427,7 @@
                                     <span class="price">$19</span>
                                 </div>
                                 <p class="description">Whole freshly roasted BBQ chicken, seasoned and cooked to perfection.</p>
+                            <a class="meal-upgrade-link" href="#mealDeals">Make it a meal: chips + drink from +$6 <span aria-hidden="true">→</span></a>
                             </div>
                         </div>
 
@@ -434,36 +444,29 @@
                             </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="item-image-placeholder">
-                                <span class="coming-soon-text">Image coming soon</span>
-                            </div>
+                        <div class="menu-item menu-item--text">
                             <div class="item-content">
                                 <div class="item-header">
                                     <h3>1/4 Roast Chicken Only</h3>
                                     <span class="price">$7</span>
                                 </div>
                                 <p class="description">Quarter piece of juicy roast BBQ chicken.</p>
+                            <a class="meal-upgrade-link" href="#mealDeals">Make it a meal: chips + drink from +$6 <span aria-hidden="true">→</span></a>
                             </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="item-image-placeholder">
-                                <span class="coming-soon-text">Image coming soon</span>
-                            </div>
+                        <div class="menu-item menu-item--text">
                             <div class="item-content">
                                 <div class="item-header">
                                     <h3>1/2 Roast Chicken Only</h3>
                                     <span class="price">$12</span>
                                 </div>
                                 <p class="description">Half piece of juicy roast BBQ chicken.</p>
+                            <a class="meal-upgrade-link" href="#mealDeals">Make it a meal: chips + drink from +$6 <span aria-hidden="true">→</span></a>
                             </div>
                         </div>
 
-                        <div class="menu-item">
-                            <div class="item-image-placeholder">
-                                <span class="coming-soon-text">Image coming soon</span>
-                            </div>
+                        <div class="menu-item menu-item--text">
                             <div class="item-content">
                                 <div class="item-header">
                                     <h3>1/4 Roast Chicken & Chips Meal</h3>
@@ -488,7 +491,7 @@
                 </div>
 
                 <div class="flavor-chips-container">
-                    <h4>Select your favorite flavor:</h4>
+                    <h4>Available flavours</h4>
                     <div class="flavor-chips">
                         <span class="flavor-chip">Chocolate</span>
                         <span class="flavor-chip">Strawberry</span>
@@ -501,7 +504,7 @@
                 </div>
 
                 <div class="menu-grid">
-                    <div class="menu-item drink-card">
+                    <div class="menu-item drink-card milkshake-card">
                         <div class="item-img-container">
                             <img src="image/milk shake.JPG" alt="Classic milkshake" class="item-real-img" loading="lazy" decoding="async">
                         </div>
@@ -514,7 +517,7 @@
                         </div>
                     </div>
 
-                    <div class="menu-item drink-card highlight-card">
+                    <div class="menu-item drink-card highlight-card milkshake-card">
                         <div class="item-img-container">
                             <img src="image/milk shake.JPG" alt="Extra thickshake" class="item-real-img" loading="lazy" decoding="async">
                         </div>
@@ -527,6 +530,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="subsection mt-4" id="coldDrinks">
                     <h3 class="subsection-title">Cold Drinks</h3>
                     <figure class="drinks-showcase">
@@ -537,180 +541,198 @@
                             <p class="drinks-availability">Flavours and sizes are subject to availability. Ask our team for today’s selection.</p>
                         </figcaption>
                     </figure>
-                    <div class="menu-grid">
-                        <div class="menu-item drink-card cold-drink-card">
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h3>Coca-Cola · 600ml</h3>
-                                    <span class="price">$5.50</span>
+                    <div class="drink-group">
+                        <h4 class="drink-group-title">Soft Drinks</h4>
+                        <div class="menu-grid">
+                            <div class="menu-item drink-card cold-drink-card">
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <h3>Coca-Cola · 600ml</h3>
+                                        <span class="price">$5.50</span>
+                                    </div>
+                                    <p class="description">Original, Zero Sugar, Diet Coke and Vanilla. Ask our team for available varieties.</p>
                                 </div>
-                                <p class="description">Original, Zero Sugar, Diet Coke and Vanilla. Ask our team for available varieties.</p>
+                            </div>
+
+                            <div class="menu-item drink-card cold-drink-card">
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <h3>Sprite · 600ml</h3>
+                                        <span class="price">$5.50</span>
+                                    </div>
+                                    <p class="description">Chilled lemon-lime soft drink.</p>
+                                </div>
+                            </div>
+
+                            <div class="menu-item drink-card cold-drink-card">
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <h3>Fanta · 600ml</h3>
+                                        <span class="price">$5.50</span>
+                                    </div>
+                                    <p class="description">Chilled orange soft drink.</p>
+                                </div>
+                            </div>
+
+                            <div class="menu-item drink-card cold-drink-card">
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <h3>Kirks · 600ml</h3>
+                                        <span class="price">$5.50</span>
+                                    </div>
+                                    <p class="description">Kirks Pasito and other available flavours. Ask our team for today’s selection.</p>
+                                </div>
+                            </div>
+
+                            <div class="menu-item drink-card cold-drink-card">
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <h3>Canned Soft Drinks · 375ml</h3>
+                                        <span class="price">$3</span>
+                                    </div>
+                                    <p class="description">Coca-Cola, Diet Coke and Fanta. Ask our team for available cans.</p>
+                                </div>
+                            </div>
+
+                            <div class="menu-item drink-card cold-drink-card">
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <h3>Bundaberg Ginger Beer</h3>
+                                        <span class="price">$5</span>
+                                    </div>
+                                    <p class="description">Bottled ginger beer, served chilled.</p>
+                                </div>
+                            </div>
+
+                            <div class="menu-item drink-card cold-drink-card">
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <h3>Large Bottle Soft Drinks</h3>
+                                        <span class="price">$6</span>
+                                    </div>
+                                    <p class="description">Coca-Cola and Sprite in larger bottles. Ask our team for available sizes.</p>
+                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="menu-item drink-card cold-drink-card">
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h3>Sprite · 600ml</h3>
-                                    <span class="price">$5.50</span>
+                    <div class="drink-group">
+                        <h4 class="drink-group-title">Water</h4>
+                        <div class="menu-grid">
+                            <div class="menu-item drink-card cold-drink-card">
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <h3>Mount Franklin Still Water</h3>
+                                        <span class="price">$3</span>
+                                    </div>
+                                    <p class="description">Chilled bottled spring water.</p>
                                 </div>
-                                <p class="description">Chilled lemon-lime soft drink.</p>
+                            </div>
+
+                            <div class="menu-item drink-card cold-drink-card">
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <h3>Mount Franklin Sparkling Water</h3>
+                                        <span class="price">$3</span>
+                                    </div>
+                                    <p class="description">Chilled sparkling water.</p>
+                                </div>
+                            </div>
+
+                            <div class="menu-item drink-card cold-drink-card">
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <h3>Pump Flavoured Water</h3>
+                                        <span class="price">$5.50</span>
+                                    </div>
+                                    <p class="description">Flavoured bottled water. Ask our team for available flavours and sizes.</p>
+                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="menu-item drink-card cold-drink-card">
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h3>Fanta · 600ml</h3>
-                                    <span class="price">$5.50</span>
+                    <div class="drink-group">
+                        <h4 class="drink-group-title">Juice, Sports Drinks &amp; Iced Tea</h4>
+                        <div class="menu-grid">
+                            <div class="menu-item drink-card cold-drink-card">
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <h3>Joe's Fruit Juice</h3>
+                                        <span class="price">$5</span>
+                                    </div>
+                                    <p class="description">Orange, apple and tropical fruit juice. Ask our team for available flavours.</p>
                                 </div>
-                                <p class="description">Chilled orange soft drink.</p>
+                            </div>
+
+                            <div class="menu-item drink-card cold-drink-card">
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <h3>Aloe Vera Drink</h3>
+                                        <span class="price">$5</span>
+                                    </div>
+                                    <p class="description">Chilled aloe vera drink in assorted varieties. Ask our team for available flavours.</p>
+                                </div>
+                            </div>
+
+                            <div class="menu-item drink-card cold-drink-card">
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <h3>Powerade</h3>
+                                        <span class="price">$5.50</span>
+                                    </div>
+                                    <p class="description">Chilled sports drink. Ask our team for available flavours and sizes.</p>
+                                </div>
+                            </div>
+
+                            <div class="menu-item drink-card cold-drink-card">
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <h3>Lipton Iced Tea</h3>
+                                        <span class="price">$5</span>
+                                    </div>
+                                    <p class="description">Peach iced tea. Ask our team for other available flavours.</p>
+                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="menu-item drink-card cold-drink-card">
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h3>Kirks · 600ml</h3>
-                                    <span class="price">$5.50</span>
+                    <div class="drink-group">
+                        <h4 class="drink-group-title">Energy Drinks</h4>
+                        <div class="menu-grid">
+                            <div class="menu-item drink-card cold-drink-card">
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <h3>V Energy</h3>
+                                        <span class="price price-options" aria-label="Small bottle $5, large bottle $7">
+                                            <span>Small bottle <strong>$5</strong></span>
+                                            <span>Large bottle <strong>$7</strong></span>
+                                        </span>
+                                    </div>
+                                    <p class="description">Chilled energy drink. Ask our team for available varieties and sizes.</p>
                                 </div>
-                                <p class="description">Kirks Pasito and other available flavours. Ask our team for today’s selection.</p>
                             </div>
-                        </div>
 
-                        <div class="menu-item drink-card cold-drink-card">
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h3>Canned Soft Drinks · 375ml</h3>
-                                    <span class="price">$3</span>
+                            <div class="menu-item drink-card cold-drink-card">
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <h3>Monster Energy</h3>
+                                        <span class="price">$7</span>
+                                    </div>
+                                    <p class="description">Chilled energy drink. Ask our team for available varieties and sizes.</p>
                                 </div>
-                                <p class="description">Coca-Cola, Diet Coke and Fanta. Ask our team for available cans.</p>
                             </div>
-                        </div>
 
-                        <div class="menu-item drink-card cold-drink-card">
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h3>Mount Franklin Still Water</h3>
-                                    <span class="price">$3</span>
+                            <div class="menu-item drink-card cold-drink-card">
+                                <div class="item-content">
+                                    <div class="item-header">
+                                        <h3>Red Bull</h3>
+                                        <span class="price price-options" aria-label="Small bottle $5, large bottle $7">
+                                            <span>Small bottle <strong>$5</strong></span>
+                                            <span>Large bottle <strong>$7</strong></span>
+                                        </span>
+                                    </div>
+                                    <p class="description">Chilled Red Bull energy drink.</p>
                                 </div>
-                                <p class="description">Chilled bottled spring water.</p>
-                            </div>
-                        </div>
-
-                        <div class="menu-item drink-card cold-drink-card">
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h3>Mount Franklin Sparkling Water</h3>
-                                    <span class="price">$3</span>
-                                </div>
-                                <p class="description">Chilled sparkling water.</p>
-                            </div>
-                        </div>
-
-                        <div class="menu-item drink-card cold-drink-card">
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h3>Pump Flavoured Water</h3>
-                                    <span class="price">$5.50</span>
-                                </div>
-                                <p class="description">Flavoured bottled water. Ask our team for available flavours and sizes.</p>
-                            </div>
-                        </div>
-
-                        <div class="menu-item drink-card cold-drink-card">
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h3>Joe's Fruit Juice</h3>
-                                    <span class="price">$5</span>
-                                </div>
-                                <p class="description">Orange, apple and tropical fruit juice. Ask our team for available flavours.</p>
-                            </div>
-                        </div>
-
-                        <div class="menu-item drink-card cold-drink-card">
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h3>Aloe Vera Drink</h3>
-                                    <span class="price">$5</span>
-                                </div>
-                                <p class="description">Chilled aloe vera drink in assorted varieties. Ask our team for available flavours.</p>
-                            </div>
-                        </div>
-
-                        <div class="menu-item drink-card cold-drink-card">
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h3>Powerade</h3>
-                                    <span class="price">$5.50</span>
-                                </div>
-                                <p class="description">Chilled sports drink. Ask our team for available flavours and sizes.</p>
-                            </div>
-                        </div>
-
-                        <div class="menu-item drink-card cold-drink-card">
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h3>Lipton Iced Tea</h3>
-                                    <span class="price">$5</span>
-                                </div>
-                                <p class="description">Peach iced tea. Ask our team for other available flavours.</p>
-                            </div>
-                        </div>
-
-                        <div class="menu-item drink-card cold-drink-card">
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h3>Bundaberg Ginger Beer</h3>
-                                    <span class="price">$5</span>
-                                </div>
-                                <p class="description">Bottled ginger beer, served chilled.</p>
-                            </div>
-                        </div>
-
-                        <div class="menu-item drink-card cold-drink-card">
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h3>V Energy</h3>
-                                    <span class="price price-options" aria-label="Small bottle $5, large bottle $7">
-                                        <span>Small bottle <strong>$5</strong></span>
-                                        <span>Large bottle <strong>$7</strong></span>
-                                    </span>
-                                </div>
-                                <p class="description">Chilled energy drink. Ask our team for available varieties and sizes.</p>
-                            </div>
-                        </div>
-
-                        <div class="menu-item drink-card cold-drink-card">
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h3>Monster Energy</h3>
-                                    <span class="price">$7</span>
-                                </div>
-                                <p class="description">Chilled energy drink. Ask our team for available varieties and sizes.</p>
-                            </div>
-                        </div>
-
-                        <div class="menu-item drink-card cold-drink-card">
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h3>Red Bull</h3>
-                                    <span class="price price-options" aria-label="Small bottle $5, large bottle $7">
-                                        <span>Small bottle <strong>$5</strong></span>
-                                        <span>Large bottle <strong>$7</strong></span>
-                                    </span>
-                                </div>
-                                <p class="description">Chilled Red Bull energy drink.</p>
-                            </div>
-                        </div>
-
-                        <div class="menu-item drink-card cold-drink-card">
-                            <div class="item-content">
-                                <div class="item-header">
-                                    <h3>Large Bottle Soft Drinks</h3>
-                                    <span class="price">$6</span>
-                                </div>
-                                <p class="description">Coca-Cola and Sprite in larger bottles. Ask our team for available sizes.</p>
                             </div>
                         </div>
                     </div>
@@ -723,16 +745,13 @@
 
                 <div class="coffee-notice-banner">
                     <div class="notice-text">
-                        <h4>All Coffee, Hot Chocolate & Tea Flat Rate $4.00</h4>
-                        <p>Note: All milk-based coffees & hot chocolate are prepared exclusively with Full Cream Milk. Tea selection features classic English Breakfast Tea.</p>
+                        <h4>Coffee, Hot Chocolate &amp; Tea · $4</h4>
+                        <p>Milk-based drinks use full cream milk only. Tea: English Breakfast.</p>
                     </div>
                 </div>
 
                 <div class="menu-grid">
-                    <div class="menu-item coffee-card">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item coffee-card menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Flat White / Latte / Cappuccino</h3>
@@ -742,10 +761,7 @@
                         </div>
                     </div>
 
-                    <div class="menu-item coffee-card">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item coffee-card menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Long Black / Espresso</h3>
@@ -756,10 +772,7 @@
                     </div>
 
                     <!-- Hot Chocolate -->
-                    <div class="menu-item coffee-card">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item coffee-card menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Hot Chocolate</h3>
@@ -769,10 +782,7 @@
                         </div>
                     </div>
 
-                    <div class="menu-item coffee-card">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item coffee-card menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>English Breakfast Tea</h3>
@@ -814,10 +824,7 @@
                 </div>
 
                 <div class="menu-grid">
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Fresh Salad Box</h3>
@@ -831,10 +838,7 @@
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Cheese Sandwich</h3>
@@ -844,10 +848,7 @@
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Full Salad Sandwich</h3>
@@ -857,10 +858,7 @@
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Cheese & Salad Sandwich</h3>
@@ -870,10 +868,7 @@
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Single Filling Sandwich (Egg/Ham/Chicken/Tuna/Salmon)</h3>
@@ -883,10 +878,7 @@
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Meat & Full Salad Sandwich</h3>
@@ -944,8 +936,8 @@
                         </div>
                         <div class="item-content">
                             <div class="item-header">
-                                <h3>Battered Sav / Sausage <span class="pork-badge" style="font-size: 0.8em; color: #e63946; margin-left: 8px;">(Pork)</span> <span style="font-size: 0.8em; color: #2a9d8f; margin-left: 6px;">(House-made)</span></h3>
-                                <span class="price">$3 ea</span>
+                                <h3>Battered Sav / Sausage <span class="dietary-badge">Contains pork</span> <span style="font-size: 0.8em; color: #2a9d8f; margin-left: 6px;">(House-made)</span></h3>
+                                <span class="price">$3 each</span>
                             </div>
                             <p class="description">House-made pork sausage dipped in golden batter and fried crisp.</p>
                         </div>
@@ -959,7 +951,7 @@
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Seafood Stick <span style="font-size: 0.8em; color: #2a9d8f; margin-left: 6px;">(House-made)</span></h3>
-                                <span class="price">$2 ea</span>
+                                <span class="price">$2 each</span>
                             </div>
                             <p class="description">House-made classic battered golden seafood stick.</p>
                         </div>
@@ -973,7 +965,7 @@
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Chic Sticks / Chicken Kebab Skewer</h3>
-                                <span class="price">$5 ea</span>
+                                <span class="price">$5 each</span>
                             </div>
                             <p class="description">Crumbed crispy chicken skewer stick.</p>
                         </div>
@@ -987,7 +979,7 @@
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Pineapple Fritter <span style="font-size: 0.8em; color: #2a9d8f; margin-left: 6px;">(House-made)</span></h3>
-                                <span class="price">$3 ea</span>
+                                <span class="price">$3 each</span>
                             </div>
                             <p class="description">House-made golden battered pineapple ring dusted with cinnamon sugar.</p>
                         </div>
@@ -1000,7 +992,7 @@
                         </div>
                         <div class="item-content">
                             <div class="item-header">
-                                <h3>Signature Chicken Salt Hot Chips <span class="gf-badge" style="font-size: 0.8em; color: #2a9d8f; margin-left: 8px;">(Gluten-Free*)</span></h3>
+                                <h3>Signature Chicken Salt Hot Chips <span class="dietary-badge">Shared fryer</span></h3>
                                 <span class="price price-options price-options--four" aria-label="Cup $5, small $7, medium $10, large $13">
                                     <span>Cup <strong>$5</strong></span>
                                     <span>Small <strong>$7</strong></span>
@@ -1013,24 +1005,18 @@
                     </div>
 
                     <!-- Sweet Potato Chips (Unavailable) -->
-                    <div class="menu-item" style="opacity: 0.65; background: rgba(248, 249, 250, 0.5); border: 1px dashed #ced4da;">
-                        <div class="item-image-placeholder" style="background: #e9ecef;">
-                            <span class="coming-soon-text" style="color: #6c757d;">Temporarily Unavailable</span>
-                        </div>
+                    <div class="menu-item menu-item--text is-unavailable">
                         <div class="item-content">
                             <div class="item-header">
-                                <h3 style="color: #6c757d;">Sweet Potato Chips <span style="font-size: 0.8em; color: #e63946; margin-left: 8px;">(Sold Out)</span></h3>
-                                <span class="price" style="color: #adb5bd;">--</span>
+                                <h3>Sweet Potato Chips <span class="status-badge">Currently unavailable</span></h3>
+                                <span class="price price-unavailable">Unavailable</span>
                             </div>
-                            <p class="description" style="color: #adb5bd;">Our sweet potato chips are currently unavailable. We apologize for any inconvenience.</p>
+                            <p class="description">Not available at the moment. Please choose from our other sides.</p>
                         </div>
                     </div>
 
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Calamari Rings <span style="font-size: 0.8em; color: #2a9d8f; margin-left: 6px;">(House-made)</span></h3>
@@ -1043,75 +1029,57 @@
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Prawn Cutlets</h3>
-                                <span class="price">$2.5 ea</span>
+                                <span class="price">$2.50 each</span>
                             </div>
                             <p class="description">Golden crispy fried prawn cutlets.</p>
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Dim Sim / Fish Cake</h3>
-                                <span class="price">$4 ea</span>
+                                <span class="price">$4 each</span>
                             </div>
                             <p class="description">Deep fried chicken dim sim or traditional fish cake.</p>
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Chiko Roll / Spring Roll</h3>
-                                <span class="price">$5 ea</span>
+                                <span class="price">$5 each</span>
                             </div>
                             <p class="description">Classic Australian Chiko roll or large spring roll.</p>
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Large Chicken Schnitzel Piece</h3>
-                                <span class="price">$10 ea</span>
+                                <span class="price">$10 each</span>
                             </div>
                             <p class="description">Large golden crumbed chicken breast schnitzel fillet.</p>
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Corn Jack</h3>
-                                <span class="price">$4 ea</span>
+                                <span class="price">$4 each</span>
                             </div>
                             <p class="description">Sweet corn kernels encased in golden batter.</p>
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Chicken Nuggets</h3>
@@ -1121,10 +1089,7 @@
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
                                 <h3>Crispy Chicken Wings</h3>
@@ -1134,13 +1099,10 @@
                         </div>
                     </div>
 
-                    <div class="menu-item">
-                        <div class="item-image-placeholder">
-                            <span class="coming-soon-text">Image coming soon</span>
-                        </div>
+                    <div class="menu-item menu-item--text">
                         <div class="item-content">
                             <div class="item-header">
-                                <h3>Seasoned Potato Wedges <span class="spicy-badge" style="font-size: 0.8em; color: #e63946; margin-left: 8px;">(Contains Chilli)</span></h3>
+                                <h3>Seasoned Potato Wedges <span class="dietary-badge">Contains chilli</span></h3>
                                 <span class="price">$12</span>
                             </div>
                             <p class="description">Seasoned potato wedges served with sweet chili & sour cream.</p>
@@ -1179,7 +1141,7 @@
             <section id="deals" class="menu-section">
                 <h2 class="section-title">Deals & Extras</h2>
 
-                <div class="deal-card">
+                <div class="deal-card" id="mealDeals" tabindex="-1">
                     <h3>Make it a Meal Deal!</h3>
                     <p>Add to any Burger, Fish, or Roast Chicken item:</p>
                     <ul>
@@ -1191,10 +1153,7 @@
                 <div class="subsection mt-4">
                     <h3 class="subsection-title">Family Deals</h3>
                     <div class="menu-grid">
-                        <div class="menu-item deal">
-                            <div class="item-image-placeholder">
-                                <span class="coming-soon-text">Image coming soon</span>
-                            </div>
+                        <div class="menu-item deal menu-item--text">
                             <div class="item-content">
                                 <div class="item-header">
                                     <h3>Whole Chicken Family Deal</h3>
@@ -1205,8 +1164,8 @@
                         </div>
 
                         <div class="menu-item deal">
-                            <div class="item-image-placeholder">
-                                <span class="coming-soon-text">Image coming soon</span>
+                            <div class="item-img-container">
+                                <img src="image/seafood feast family deal.jpg" alt="Seafood Feast Family Deal" class="item-real-img" loading="lazy">
                             </div>
                             <div class="item-content">
                                 <div class="item-header">
@@ -1222,10 +1181,7 @@
                 <div class="subsection mt-4">
                     <h3 class="subsection-title">Kid's Meals</h3>
                     <div class="menu-grid">
-                        <div class="menu-item">
-                            <div class="item-image-placeholder">
-                                <span class="coming-soon-text">Image coming soon</span>
-                            </div>
+                        <div class="menu-item menu-item--text">
                             <div class="item-content">
                                 <div class="item-header">
                                     <h3>Kid's Fish Meal</h3>
@@ -1234,10 +1190,7 @@
                                 <p class="description">3 fish cocktails served with hot chips.</p>
                             </div>
                         </div>
-                        <div class="menu-item">
-                            <div class="item-image-placeholder">
-                                <span class="coming-soon-text">Image coming soon</span>
-                            </div>
+                        <div class="menu-item menu-item--text">
                             <div class="item-content">
                                 <div class="item-header">
                                     <h3>Kid's Nugget Meal</h3>

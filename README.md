@@ -57,7 +57,7 @@ Then open [http://localhost:8000](http://localhost:8000).
 .
 ├── index.html       # Menu content and page structure
 ├── style.css        # Responsive layout and visual design
-├── script.js        # Search, category filters, and local view counter
+├── script.js        # Search, category filters, and image carousel
 ├── image/           # Food photography used throughout the menu
 ├── icon/            # Brand logo and favicons
 └── optimize.sh      # Image optimisation helper
